@@ -1,4 +1,23 @@
+<?php
 
+if(isset($_POST["login"])){
+   
+    if(!empty($_POST["username"]) && 
+       !empty($_POST["password"])){
+
+        $_SESSION["username"] = $_POST["username"];
+        $_SESSION["password"] = $_POST["password"];
+
+        echo $_SESSION["username"] . "<br>";
+        echo $_SESSION["password"] . "<br>";
+    }
+      if(isset($_POST["logout"])){
+        session_destroy();
+        header("Location: home.php");
+      }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,12 +32,12 @@
    <title></title>
 </head>
    
-<body>
+<body class="container d-flex justify-content-center">
     <form action="index.php" method="post">
     username:<br>
     <input type="text" name="username"><br>  
     password:<br>
-    <input type="password" name="password"><br>     
+    <input type="password" name="password"><br> <br> 
     <input type="submit" name="login" value="login">
     </form>
 </body>

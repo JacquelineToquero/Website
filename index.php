@@ -3,24 +3,6 @@ include "db_conn.php";
 include "header.html";
 ?>
 
-<?php
-
-if(isset($_POST["login"])){
-   
-    if(!empty($_POST["username"]) && 
-       !empty($_POST["password"])){
-
-        $_SESSION["username"] = $_POST["username"];
-        $_SESSION["password"] = $_POST["password"];
-
-        echo $_SESSION["username"] . "<br>";
-        echo $_SESSION["password"] . "<br>";
-    }
-}
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,8 +20,11 @@ if(isset($_POST["login"])){
 </head>
 
 <body>
-  <nav class="navbar navbar-light justify-content-center fs-3 mb-5" style="background-color: #00ff5573;">
+  <nav class=" " style="background-color: #00ff5573;">
   CRUD WEB TEST
+  </nav>
+  <nav class="navbar navbar-light justify-content-center fs-3 mb-5" style="background-color: white">
+  LIST
   </nav>
 
   <div class="container">
