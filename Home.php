@@ -8,9 +8,9 @@ if(isset($_POST["login"])){
         $_SESSION["username"] = $_POST["username"];
         $_SESSION["password"] = $_POST["password"];
 
-        echo $_SESSION["username"] . "<br>";
-        echo $_SESSION["password"] . "<br>";
     }
+
+
       if(isset($_POST["logout"])){
         session_destroy();
         header("Location: home.php");
